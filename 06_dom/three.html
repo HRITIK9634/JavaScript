@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script> 
+
+    // addnew element
+
+    function addLanguage(langName){
+    const li =  document.createElement('li');
+    li.innerHTML = `${langName}`;
+    document.querySelector('.language').
+    appendChild(li);
+    }
+    addLanguage("python");
+    addLanguage("typescript");
+
+
+
+    //add element new element
+
+    function addOptimizationLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(' .language').appendChild(li);
+    }
+
+    addOptimizationLanguage("golang")
+
+    //edit 
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = '<li>Typescript</li>';
+
+
+
+//remove
+const lastChild = document.querySelector('li:last-child');
+lastChild.remove();
+
+</script>
+</html>
